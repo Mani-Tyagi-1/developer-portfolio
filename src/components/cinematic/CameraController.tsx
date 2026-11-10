@@ -13,28 +13,24 @@ export const CameraController: React.FC<CameraControllerProps> = ({ children }) 
   useEffect(() => {
     if (typeof window === "undefined" || !containerRef.current) return;
 
-    // Apply continuous virtual camera parallax scrubbing across scenes
+    // Subtle fade reveal without 3D rotation or scaling shifts to ensure CLS is 0.00
     const ctx = gsap.context(() => {
-      const sections = gsap.utils.toArray<HTMLElement>("section");
+      const sections = gsap.utils.toArray<HTMLElement>("section:not(#hero)");
       
-      sections.forEach((section, i) => {
+      sections.forEach((section) => {
         gsap.fromTo(
           section,
           {
-            scale: 0.96,
-            opacity: 0.8,
-            rotationX: 2,
+            opacity: 0.88,
           },
           {
-            scale: 1,
             opacity: 1,
-            rotationX: 0,
             ease: "power2.out",
             scrollTrigger: {
               trigger: section,
-              start: "top 85%",
-              end: "top 20%",
-              scrub: 1,
+              start: "top 90%",
+              end: "top 35%",
+              scrub: 0.5,
             },
           }
         );
@@ -47,7 +43,7 @@ export const CameraController: React.FC<CameraControllerProps> = ({ children }) 
   return (
     <div
       ref={containerRef}
-      className="relative w-full transition-transform duration-300 [perspective:1200px]"
+      className="relative w-full"
     >
       {children}
     </div>

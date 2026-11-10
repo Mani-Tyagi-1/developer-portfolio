@@ -1,49 +1,35 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { SmoothScrollProvider } from "@/components/cinematic/SmoothScrollProvider";
-import { CustomCursor } from "@/components/cinematic/CustomCursor";
-import { AudioToggle } from "@/components/cinematic/AudioToggle";
-import { Navigation } from "@/components/cinematic/Navigation";
-
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { CommandNavbar } from "@/components/navigation/CommandNavbar";
 
 export const metadata: Metadata = {
-  title: "Mani Tyagi — Cinematic Storytelling Portfolio & Creative Developer",
-  description: "An unforgettable interactive digital cinema experience showcasing Mani Tyagi's creative development, WebGL 3D graphics, Next.js architecture, and frontend mastery.",
+  title: "Mani Tyagi — Full Stack Engineer | Scalable Admin Engines & Web Platforms",
+  description: "Full Stack Developer with 1.5+ years of experience using Next.js, TypeScript, Node.js, and MongoDB. Owning admin architectures, fine-grained RBAC, and payment pipelines serving 100K+ users at Vedic Vaibhav.",
   keywords: [
     "Mani Tyagi",
-    "Creative Developer",
-    "Frontend Architect",
-    "Next.js Portfolio",
-    "Awwwards Portfolio",
-    "GSAP ScrollTrigger",
-    "Three.js WebGL",
-    "React 19",
-    "Tailwind CSS"
+    "Full Stack Engineer",
+    "Next.js Developer",
+    "TypeScript",
+    "Node.js",
+    "MongoDB",
+    "RBAC Architecture",
+    "Transactional Webhooks",
+    "Core Web Vitals",
+    "Vedic Vaibhav"
   ],
   authors: [{ name: "Mani Tyagi" }],
   openGraph: {
-    title: "Mani Tyagi — Creative Developer & Frontend Architect",
-    description: "An interactive digital cinema experience built with Next.js, GSAP, and WebGL.",
+    title: "Mani Tyagi — Full Stack Engineer",
+    description: "Architecting high-reliability admin engines, transactional webhooks, and scalable Next.js platforms serving 100K+ users.",
     url: "https://manityagi.dev",
-    siteName: "Mani Tyagi Portfolio",
+    siteName: "Mani Tyagi Engineering Portfolio",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mani Tyagi — Creative Developer & Frontend Architect",
-    description: "An interactive digital cinema experience built with Next.js, GSAP, and WebGL.",
+    title: "Mani Tyagi — Full Stack Engineer",
+    description: "Architecting high-reliability admin engines, transactional webhooks, and scalable Next.js platforms.",
   },
 };
 
@@ -56,27 +42,27 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Mani Tyagi",
-    jobTitle: "Senior Creative Developer & Frontend Architect",
+    jobTitle: "Full Stack Engineer",
     url: "https://manityagi.dev",
     sameAs: [
       "https://github.com",
-      "https://linkedin.com",
-      "https://x.com"
+      "https://linkedin.com"
     ],
     knowsAbout: [
       "JavaScript",
       "TypeScript",
-      "React",
       "Next.js",
-      "GSAP",
-      "WebGL",
-      "Cybersecurity",
-      "Artificial Intelligence"
+      "Node.js",
+      "MongoDB",
+      "Redis",
+      "RBAC",
+      "Webhooks",
+      "Core Web Vitals"
     ]
   };
 
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
@@ -85,21 +71,13 @@ export default function RootLayout({
       </head>
       <body
         suppressHydrationWarning
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-white selection:bg-cyan-500 selection:text-black`}
+        className="antialiased bg-[#09090B] text-[#FAFAFA] font-sans selection:bg-zinc-800 selection:text-zinc-100"
       >
-        <SmoothScrollProvider>
-          {/* Magnetic Cursor */}
-          <CustomCursor />
+        {/* Sticky Command-Bar Navigation */}
+        <CommandNavbar />
 
-          {/* Floating Audio Controls */}
-          <AudioToggle />
-
-          {/* Navigation Bar */}
-          <Navigation />
-
-          {/* Main Experience Content */}
-          <main className="relative z-10">{children}</main>
-        </SmoothScrollProvider>
+        {/* Main Content Area */}
+        <main className="relative z-10 w-full">{children}</main>
       </body>
     </html>
   );

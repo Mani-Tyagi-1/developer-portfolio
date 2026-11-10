@@ -35,7 +35,7 @@ export const Scene5Skills: React.FC = () => {
   };
 
   return (
-    <section id="scene-5" className="relative min-h-screen py-24 px-6 max-w-7xl mx-auto flex flex-col justify-center">
+    <section id="skills" className="relative min-h-screen py-24 px-6 max-w-7xl mx-auto flex flex-col justify-center scroll-mt-24">
       {/* Chapter Header */}
       <div className="flex flex-col items-center text-center mb-12">
         <span className="text-xs font-mono text-cyan-400 tracking-widest uppercase mb-2">
