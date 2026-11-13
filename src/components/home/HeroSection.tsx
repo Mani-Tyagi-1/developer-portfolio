@@ -68,7 +68,7 @@ export const HeroSection: React.FC = () => {
 
             {/* Tertiary CTA */}
             <a
-              href="https://www.linkedin.com/in/mani-tyagi"
+              href="https://www.linkedin.com/in/mani-tyagi-dev/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-3.5 sm:px-4 py-2.5 rounded-xl sm:rounded-lg border border-zinc-800 bg-zinc-900/90 text-zinc-300 font-medium text-xs sm:text-sm hover:border-zinc-700 hover:bg-zinc-800/90 hover:text-white transition-all shadow-sm focus:outline-none"

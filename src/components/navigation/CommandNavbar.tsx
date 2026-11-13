@@ -152,7 +152,7 @@ export const CommandNavbar: React.FC = () => {
             </a>
             <span>•</span>
             <a
-              href="https://www.linkedin.com/in/mani-tyagi"
+              href="https://www.linkedin.com/in/mani-tyagi-dev/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 hover:text-zinc-100 py-1"
